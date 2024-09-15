@@ -1,6 +1,6 @@
-import { defineField, defineType } from 'sanity'
+import { defineField, defineType } from 'sanity';
 import { defaultLocale } from '@lib/i18n';
-import { GrDirections } from "react-icons/gr";
+import { GrDirections } from 'react-icons/gr';
 
 export default defineType({
   title: 'Event Type',
@@ -11,24 +11,24 @@ export default defineType({
     defineField({
       name: 'title',
       title: 'Title',
-      type: 'localeString',
+      type: 'localeString'
     }),
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'localeBlockContent',
+      type: 'localeBlockContent'
     }),
     defineField({
       name: 'active',
       title: 'Active',
       type: 'boolean',
       description: 'If this will be visible in your websiste',
-      initialValue: true,
-    }),
+      initialValue: true
+    })
   ],
   preview: {
     select: {
-      title: `title.${defaultLocale}`,
+      title: `title.${defaultLocale}`
     }
   }
-})
+});

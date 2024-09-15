@@ -14,7 +14,7 @@
 
 // Source: schema.json
 export type SanityImagePaletteSwatch = {
-  _type: "sanity.imagePaletteSwatch";
+  _type: 'sanity.imagePaletteSwatch';
   background?: string;
   foreground?: string;
   population?: number;
@@ -22,7 +22,7 @@ export type SanityImagePaletteSwatch = {
 };
 
 export type SanityImagePalette = {
-  _type: "sanity.imagePalette";
+  _type: 'sanity.imagePalette';
   darkMuted?: SanityImagePaletteSwatch;
   lightVibrant?: SanityImagePaletteSwatch;
   darkVibrant?: SanityImagePaletteSwatch;
@@ -33,7 +33,7 @@ export type SanityImagePalette = {
 };
 
 export type SanityImageDimensions = {
-  _type: "sanity.imageDimensions";
+  _type: 'sanity.imageDimensions';
   height?: number;
   width?: number;
   aspectRatio?: number;
@@ -41,7 +41,7 @@ export type SanityImageDimensions = {
 
 export type SanityFileAsset = {
   _id: string;
-  _type: "sanity.fileAsset";
+  _type: 'sanity.fileAsset';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -62,7 +62,7 @@ export type SanityFileAsset = {
 };
 
 export type Geopoint = {
-  _type: "geopoint";
+  _type: 'geopoint';
   lat?: number;
   lng?: number;
   alt?: number;
@@ -70,7 +70,7 @@ export type Geopoint = {
 
 export type CustomSettings = {
   _id: string;
-  _type: "customSettings";
+  _type: 'customSettings';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -80,30 +80,32 @@ export type CustomSettings = {
 
 export type LanguagesAvailable = {
   _id: string;
-  _type: "languagesAvailable";
+  _type: 'languagesAvailable';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  languages?: Array<"hu" | "en">;
-  langDefault?: Array<"hu" | "en">;
+  languages?: Array<'hu' | 'en'>;
+  langDefault?: Array<'hu' | 'en'>;
 };
 
 export type Navigation = {
   _id: string;
-  _type: "navigation";
+  _type: 'navigation';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
   title?: string;
   navId?: Slug;
-  items?: Array<{
-    _key: string;
-  } & NavigationItem>;
+  items?: Array<
+    {
+      _key: string;
+    } & NavigationItem
+  >;
 };
 
 export type Event = {
   _id: string;
-  _type: "event";
+  _type: 'event';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -111,9 +113,9 @@ export type Event = {
   slug?: LocaleSlug;
   eventType?: {
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "eventType";
+    [internalGroqTypeReferenceTo]?: 'eventType';
   };
   description?: LocaleText;
   location?: string;
@@ -124,14 +126,16 @@ export type Event = {
   publicationStartDate?: string;
   publicationEndDate?: string;
   active?: boolean;
-  attendants?: Array<{
-    _key: string;
-  } & EventAttendant>;
+  attendants?: Array<
+    {
+      _key: string;
+    } & EventAttendant
+  >;
 };
 
 export type EventType = {
   _id: string;
-  _type: "eventType";
+  _type: 'eventType';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -140,9 +144,20 @@ export type EventType = {
   active?: boolean;
 };
 
+export type ContactForm = {
+  _id: string;
+  _type: 'contactForm';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  fromName?: string;
+  fromEmail?: string;
+  message?: string;
+};
+
 export type PostCategory = {
   _id: string;
-  _type: "postCategory";
+  _type: 'postCategory';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -152,7 +167,7 @@ export type PostCategory = {
 
 export type Post = {
   _id: string;
-  _type: "post";
+  _type: 'post';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -160,37 +175,39 @@ export type Post = {
   slug?: LocaleSlug;
   author?: {
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "author";
+    [internalGroqTypeReferenceTo]?: 'author';
   };
   mainImage?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    _type: "image";
+    _type: 'image';
   };
   categories?: Array<{
     _ref: string;
-    _type: "reference";
+    _type: 'reference';
     _weak?: boolean;
     _key: string;
-    [internalGroqTypeReferenceTo]?: "postCategory";
+    [internalGroqTypeReferenceTo]?: 'postCategory';
   }>;
   publishedAt?: string;
-  body?: Array<{
-    _key: string;
-  } & LocaleBlockContent>;
+  body?: Array<
+    {
+      _key: string;
+    } & LocaleBlockContent
+  >;
 };
 
 export type Author = {
   _id: string;
-  _type: "author";
+  _type: 'author';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -199,37 +216,37 @@ export type Author = {
   image?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    _type: "image";
+    _type: 'image';
   };
   bio?: Array<{
     children?: Array<{
       marks?: Array<string>;
       text?: string;
-      _type: "span";
+      _type: 'span';
       _key: string;
     }>;
-    style?: "normal";
+    style?: 'normal';
     listItem?: never;
     markDefs?: Array<{
       href?: string;
-      _type: "link";
+      _type: 'link';
       _key: string;
     }>;
     level?: number;
-    _type: "block";
+    _type: 'block';
     _key: string;
   }>;
 };
 
 export type Page = {
   _id: string;
-  _type: "page";
+  _type: 'page';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -238,179 +255,194 @@ export type Page = {
   mainImage?: {
     asset?: {
       _ref: string;
-      _type: "reference";
+      _type: 'reference';
       _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
     };
     hotspot?: SanityImageHotspot;
     crop?: SanityImageCrop;
-    _type: "image";
+    _type: 'image';
   };
-  body?: Array<{
-    _key: string;
-  } & LocaleBlockContent>;
-  listOf?: Array<"post" | "postCategory">;
+  body?: Array<
+    {
+      _key: string;
+    } & LocaleBlockContent
+  >;
+  listOf?: Array<'post' | 'postCategory'>;
 };
 
 export type NavigationItem = {
-  _type: "navigationItem";
+  _type: 'navigationItem';
   title?: LocaleString;
   navigationItemLink?: NavigationLink;
 };
 
 export type NavigationLink = {
-  _type: "navigationLink";
-  internalLink?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "page";
-  } | {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "post";
-  };
+  _type: 'navigationLink';
+  internalLink?:
+    | {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'page';
+      }
+    | {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'post';
+      };
   externalUrl?: string;
-  submenu?: Array<{
-    _key: string;
-  } & NavigationItem>;
+  submenu?: Array<
+    {
+      _key: string;
+    } & NavigationItem
+  >;
 };
 
 export type LocaleText = {
-  _type: "localeText";
+  _type: 'localeText';
   hu?: string;
   en?: string;
 };
 
 export type LocaleString = {
-  _type: "localeString";
+  _type: 'localeString';
   hu?: string;
   en?: string;
 };
 
 export type LocaleSlug = {
-  _type: "localeSlug";
+  _type: 'localeSlug';
   hu?: Slug;
   en?: Slug;
 };
 
 export type Slug = {
-  _type: "slug";
+  _type: 'slug';
   current?: string;
   source?: string;
 };
 
 export type LocaleBlockContent = {
-  _type: "localeBlockContent";
-  hu?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-    listItem?: "bullet";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  } | {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    size?: "sm" | "md" | "lg" | "orig";
-    alignment?: "left" | "center" | "right";
-    _type: "image";
-    _key: string;
-  }>;
-  en?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-    listItem?: "bullet";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  } | {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    size?: "sm" | "md" | "lg" | "orig";
-    alignment?: "left" | "center" | "right";
-    _type: "image";
-    _key: string;
-  }>;
+  _type: 'localeBlockContent';
+  hu?: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
+        listItem?: 'bullet';
+        markDefs?: Array<{
+          href?: string;
+          _type: 'link';
+          _key: string;
+        }>;
+        level?: number;
+        _type: 'block';
+        _key: string;
+      }
+    | {
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        size?: 'sm' | 'md' | 'lg' | 'orig';
+        alignment?: 'left' | 'center' | 'right';
+        _type: 'image';
+        _key: string;
+      }
+  >;
+  en?: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
+        listItem?: 'bullet';
+        markDefs?: Array<{
+          href?: string;
+          _type: 'link';
+          _key: string;
+        }>;
+        level?: number;
+        _type: 'block';
+        _key: string;
+      }
+    | {
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        size?: 'sm' | 'md' | 'lg' | 'orig';
+        alignment?: 'left' | 'center' | 'right';
+        _type: 'image';
+        _key: string;
+      }
+  >;
 };
 
 export type EventAttendant = {
-  _type: "eventAttendant";
+  _type: 'eventAttendant';
   fullName?: string;
   email?: string;
   phone?: string;
 };
 
-export type BlockContent = Array<{
-  children?: Array<{
-    marks?: Array<string>;
-    text?: string;
-    _type: "span";
-    _key: string;
-  }>;
-  style?: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
-  listItem?: "bullet";
-  markDefs?: Array<{
-    href?: string;
-    _type: "link";
-    _key: string;
-  }>;
-  level?: number;
-  _type: "block";
-  _key: string;
-} | {
-  asset?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-  };
-  hotspot?: SanityImageHotspot;
-  crop?: SanityImageCrop;
-  alt?: string;
-  size?: "sm" | "md" | "lg" | "orig";
-  alignment?: "left" | "center" | "right";
-  _type: "image";
-  _key: string;
-}>;
+export type BlockContent = Array<
+  | {
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: 'span';
+        _key: string;
+      }>;
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
+      listItem?: 'bullet';
+      markDefs?: Array<{
+        href?: string;
+        _type: 'link';
+        _key: string;
+      }>;
+      level?: number;
+      _type: 'block';
+      _key: string;
+    }
+  | {
+      asset?: {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt?: string;
+      size?: 'sm' | 'md' | 'lg' | 'orig';
+      alignment?: 'left' | 'center' | 'right';
+      _type: 'image';
+      _key: string;
+    }
+>;
 
 export type SanityImageCrop = {
-  _type: "sanity.imageCrop";
+  _type: 'sanity.imageCrop';
   top?: number;
   bottom?: number;
   left?: number;
@@ -418,7 +450,7 @@ export type SanityImageCrop = {
 };
 
 export type SanityImageHotspot = {
-  _type: "sanity.imageHotspot";
+  _type: 'sanity.imageHotspot';
   x?: number;
   y?: number;
   height?: number;
@@ -427,7 +459,7 @@ export type SanityImageHotspot = {
 
 export type SanityImageAsset = {
   _id: string;
-  _type: "sanity.imageAsset";
+  _type: 'sanity.imageAsset';
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
@@ -449,14 +481,14 @@ export type SanityImageAsset = {
 };
 
 export type SanityAssetSourceData = {
-  _type: "sanity.assetSourceData";
+  _type: 'sanity.assetSourceData';
   name?: string;
   id?: string;
   url?: string;
 };
 
 export type SanityImageMetadata = {
-  _type: "sanity.imageMetadata";
+  _type: 'sanity.imageMetadata';
   location?: Geopoint;
   dimensions?: SanityImageDimensions;
   palette?: SanityImagePalette;
@@ -465,33 +497,108 @@ export type SanityImageMetadata = {
   hasAlpha?: boolean;
   isOpaque?: boolean;
 };
-export declare const internalGroqTypeReferenceTo: unique symbol;
 
+export type AllSanitySchemaTypes =
+  | SanityImagePaletteSwatch
+  | SanityImagePalette
+  | SanityImageDimensions
+  | SanityFileAsset
+  | Geopoint
+  | CustomSettings
+  | LanguagesAvailable
+  | Navigation
+  | Event
+  | EventType
+  | ContactForm
+  | PostCategory
+  | Post
+  | Author
+  | Page
+  | NavigationItem
+  | NavigationLink
+  | LocaleText
+  | LocaleString
+  | LocaleSlug
+  | Slug
+  | LocaleBlockContent
+  | EventAttendant
+  | BlockContent
+  | SanityImageCrop
+  | SanityImageHotspot
+  | SanityImageAsset
+  | SanityAssetSourceData
+  | SanityImageMetadata;
+export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/app/sanity-conf/lib/queries.ts
 // Variable: mainMenuQuery
 // Query: *[_type == "navigation" && navId.current == "main-menu"][0] {   items,  "pages": items[].navigationItemLink.internalLink->{    _id,    _type,    slug  },  "subpages": items[].navigationItemLink.submenu[].navigationItemLink.internalLink->{    _id,    _type,    slug  }}
 export type MainMenuQueryResult = {
-  items: Array<{
-    _key: string;
-  } & NavigationItem> | null;
-  pages: Array<{
-    _id: string;
-    _type: "page";
-    slug: LocaleSlug | null;
-  } | {
-    _id: string;
-    _type: "post";
-    slug: LocaleSlug | null;
-  } | null> | null;
-  subpages: Array<{
-    _id: string;
-    _type: "page";
-    slug: LocaleSlug | null;
-  } | {
-    _id: string;
-    _type: "post";
-    slug: LocaleSlug | null;
-  } | null> | null;
+  items: Array<
+    {
+      _key: string;
+    } & NavigationItem
+  > | null;
+  pages: Array<
+    | {
+        _id: string;
+        _type: 'page';
+        slug: LocaleSlug | null;
+      }
+    | {
+        _id: string;
+        _type: 'post';
+        slug: LocaleSlug | null;
+      }
+    | null
+  > | null;
+  subpages: Array<
+    | {
+        _id: string;
+        _type: 'page';
+        slug: LocaleSlug | null;
+      }
+    | {
+        _id: string;
+        _type: 'post';
+        slug: LocaleSlug | null;
+      }
+    | null
+  > | null;
+} | null;
+// Variable: footerMenuQuery
+// Query: *[_type == "navigation" && navId.current == "footer-menu"][0] {   items,  "pages": items[].navigationItemLink.internalLink->{    _id,    _type,    slug  },  "subpages": items[].navigationItemLink.submenu[].navigationItemLink.internalLink->{    _id,    _type,    slug  }}
+export type FooterMenuQueryResult = {
+  items: Array<
+    {
+      _key: string;
+    } & NavigationItem
+  > | null;
+  pages: Array<
+    | {
+        _id: string;
+        _type: 'page';
+        slug: LocaleSlug | null;
+      }
+    | {
+        _id: string;
+        _type: 'post';
+        slug: LocaleSlug | null;
+      }
+    | null
+  > | null;
+  subpages: Array<
+    | {
+        _id: string;
+        _type: 'page';
+        slug: LocaleSlug | null;
+      }
+    | {
+        _id: string;
+        _type: 'post';
+        slug: LocaleSlug | null;
+      }
+    | null
+  > | null;
 } | null;
 // Variable: pageSlugsQuery
 // Query: *[_type == "page"] {  slug}
@@ -506,7 +613,18 @@ export type PostSlugsQueryResult = Array<{
 // Variable: languagesAvailableQuery
 // Query: *[_type == "languagesAvailable"][0] {  languages,  langDefault}
 export type LanguagesAvailableQueryResult = {
-  languages: Array<"en" | "hu"> | null;
-  langDefault: Array<"en" | "hu"> | null;
+  languages: Array<'en' | 'hu'> | null;
+  langDefault: Array<'en' | 'hu'> | null;
 } | null;
 
+// Query TypeMap
+import '@sanity/client';
+declare module '@sanity/client' {
+  interface SanityQueries {
+    '*[_type == "navigation" && navId.current == "main-menu"][0] { \n  items,\n  "pages": items[].navigationItemLink.internalLink->{\n    _id,\n    _type,\n    slug\n  },\n  "subpages": items[].navigationItemLink.submenu[].navigationItemLink.internalLink->{\n    _id,\n    _type,\n    slug\n  }\n}': MainMenuQueryResult;
+    '*[_type == "navigation" && navId.current == "footer-menu"][0] { \n  items,\n  "pages": items[].navigationItemLink.internalLink->{\n    _id,\n    _type,\n    slug\n  },\n  "subpages": items[].navigationItemLink.submenu[].navigationItemLink.internalLink->{\n    _id,\n    _type,\n    slug\n  }\n}': FooterMenuQueryResult;
+    '*[_type == "page"] {\n  slug\n}': PageSlugsQueryResult;
+    '*[_type == "post"] {\n  slug\n}': PostSlugsQueryResult;
+    '*[_type == "languagesAvailable"][0] {\n  languages,\n  langDefault\n}': LanguagesAvailableQueryResult;
+  }
+}

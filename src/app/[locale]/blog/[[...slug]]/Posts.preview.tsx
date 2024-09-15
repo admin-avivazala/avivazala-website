@@ -14,14 +14,14 @@ export type PostsPreviewProps = {
 
 export default function PostsPreview({
   locale,
-  postsInitial,
+  postsInitial
 }: PostsPreviewProps) {
   const { data } = useQuery<Post[]>(
     preparePostsQuery(locale),
     { locale },
     {
-      initial: postsInitial,
-    },
+      initial: postsInitial
+    }
   );
 
   return data ? (

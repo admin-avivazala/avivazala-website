@@ -12,7 +12,7 @@ export type PostsContainerProps = {
 export default async function PostsContainer({
   locale,
   slug,
-  isDraftMode = false,
+  isDraftMode = false
 }: PostsContainerProps) {
   const postInitial = await loadPost(locale, slug, isDraftMode);
 

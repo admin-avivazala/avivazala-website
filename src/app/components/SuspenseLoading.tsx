@@ -8,7 +8,7 @@ export type SuspenseLoadingProps = {
 
 export default function SuspenseLoading({
   text,
-  children,
+  children
 }: SuspenseLoadingProps) {
   return <Suspense fallback={<Loading text={text} />}> {children}</Suspense>;
 }

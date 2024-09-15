@@ -9,7 +9,10 @@ export const IMAGE_MAX_W_MD_CLASS = 'max-w-md';
 export const IMAGE_MAX_W_LG_CLASS = 'max-w-xl';
 export const IMAGE_MAX_W_ORIG_CLASS = 'max-w-100';
 
-export const classAlignments = new Map<(typeof IMAGE_ALIGNMENTS)[number], string>();
+export const classAlignments = new Map<
+  (typeof IMAGE_ALIGNMENTS)[number],
+  string
+>();
 classAlignments.set('left', IMAGE_ALIGN_LEFT_CLASS);
 classAlignments.set('center', IMAGE_ALIGN_CENTER_CLASS);
 classAlignments.set('right', IMAGE_ALIGN_RIGHT_CLASS);
@@ -23,5 +26,5 @@ classSizes.set('orig', IMAGE_MAX_W_ORIG_CLASS);
 /** URL */
 export const slugPerType = new Map<string, string>([
   ['page', ''],
-  ['post', 'blog'],
+  ['post', 'blog']
 ]);

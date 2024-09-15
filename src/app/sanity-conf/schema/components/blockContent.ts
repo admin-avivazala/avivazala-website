@@ -15,13 +15,13 @@ export default defineType({
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
         { title: 'H4', value: 'h4' },
-        { title: 'Quote', value: 'blockquote' },
+        { title: 'Quote', value: 'blockquote' }
       ],
       lists: [{ title: 'Bullet', value: 'bullet' }],
       marks: {
         decorators: [
           { title: 'Strong', value: 'strong' },
-          { title: 'Emphasis', value: 'em' },
+          { title: 'Emphasis', value: 'em' }
         ],
         annotations: [
           {
@@ -32,12 +32,12 @@ export default defineType({
               {
                 title: 'URL',
                 name: 'href',
-                type: 'url',
-              },
-            ],
-          },
-        ],
-      },
+                type: 'url'
+              }
+            ]
+          }
+        ]
+      }
     }),
     defineArrayMember({
       type: 'image',
@@ -45,8 +45,9 @@ export default defineType({
         {
           name: 'alt',
           title: 'Description of the image for screen readers',
-          description: '⚡ Optional but highly encouraged to make content more accessible for visually impaired folks.',
-          type: 'string',
+          description:
+            '⚡ Optional but highly encouraged to make content more accessible for visually impaired folks.',
+          type: 'string'
         },
         {
           name: 'size',
@@ -70,7 +71,7 @@ export default defineType({
               {
                 value: 'orig',
                 title: 'Original'
-              },
+              }
             ]
           }
         },
@@ -93,12 +94,12 @@ export default defineType({
               {
                 value: 'right',
                 title: 'Right'
-              },
+              }
             ]
           }
-        },
+        }
       ],
-      options: { hotspot: true },
-    }),
-  ],
+      options: { hotspot: true }
+    })
+  ]
 });

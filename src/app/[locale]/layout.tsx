@@ -17,14 +17,14 @@ export const metadata: Metadata = {
       '/img/favicon57.png',
       '/img/favicon72.png',
       '/img/favicon114.png',
-      '/img/favicon144.png',
-    ],
-  },
+      '/img/favicon144.png'
+    ]
+  }
 };
 
 const baseFont = Ubuntu({
   subsets: ['latin'],
-  weight: ['300', '400', '500', '700'],
+  weight: ['300', '400', '500', '700']
 });
 
 export function generateStaticParams() {
@@ -33,7 +33,7 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params,
+  params
 }: Readonly<{
   children: ReactNode;
   params: { locale: string };

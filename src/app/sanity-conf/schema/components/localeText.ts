@@ -1,14 +1,14 @@
-import { defineType, defineField } from 'sanity'
+import { defineType, defineField } from 'sanity';
 import { supportedLanguages } from '@lib/i18n';
 
-const fields = supportedLanguages.map((lang) => (
+const fields = supportedLanguages.map((lang) =>
   defineField({
     title: lang.title,
     name: lang.id,
     type: 'text',
     fieldset: lang.isDefault ? undefined : 'translations'
   })
-));
+);
 
 export default defineType({
   title: 'Localized text',
@@ -21,5 +21,5 @@ export default defineType({
       options: { collapsible: true }
     }
   ],
-  fields,
-})
+  fields
+});

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { Link } from '@lib/i18n';
 import { ReactNode, MouseEvent } from 'react';
@@ -14,7 +14,7 @@ export type MainMenuItemProps = {
 const MobileItem = ({ label, linkTo, submenu }: MainMenuItemProps) => {
   const closeMenu = (event: MouseEvent<HTMLAnchorElement>) => {
     event.currentTarget.blur();
-  }
+  };
 
   return (
     <>
@@ -40,14 +40,14 @@ const DesktopItem = ({ label, linkTo, submenu }: MainMenuItemProps) => {
   const closeMenu = () => {
     const items = Array.from(document.getElementsByTagName('details'));
 
-    items.forEach(item => {
+    items.forEach((item) => {
       if (item.hasAttribute('open')) {
         item.removeAttribute('open');
       }
     });
-  }
+  };
 
-  return (submenu?.length ?
+  return submenu?.length ? (
     <details>
       <summary>{label}</summary>
       {submenu && submenu.length && (
@@ -63,7 +63,8 @@ const DesktopItem = ({ label, linkTo, submenu }: MainMenuItemProps) => {
           ))}
         </ul>
       )}
-    </details> :
+    </details>
+  ) : (
     <Link href={linkTo} title={label} onClick={closeMenu}>
       {label}
     </Link>
@@ -73,11 +74,7 @@ const DesktopItem = ({ label, linkTo, submenu }: MainMenuItemProps) => {
 export default function MainMenuItem(props: MainMenuItemProps): ReactNode {
   return (
     <li>
-      {props.isDesktop ? (
-        <DesktopItem {...props} />
-      ) : (
-        <MobileItem {...props} />
-      )}
+      {props.isDesktop ? <DesktopItem {...props} /> : <MobileItem {...props} />}
     </li>
   );
 }

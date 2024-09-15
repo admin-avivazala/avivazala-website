@@ -10,7 +10,7 @@ export type PostsContainerProps = {
 
 export default async function PostsContainer({
   locale,
-  isDraftMode = false,
+  isDraftMode = false
 }: PostsContainerProps) {
   const postsInitial = await loadPosts(locale, isDraftMode);
 

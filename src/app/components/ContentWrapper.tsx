@@ -10,7 +10,7 @@ export type ContentWrapperProps = {
 export default function ContentWrapper({
   children,
   x = true,
-  y = true,
+  y = true
 }: ContentWrapperProps) {
   let classNames: string[] = [];
 

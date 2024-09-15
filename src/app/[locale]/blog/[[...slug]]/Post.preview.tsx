@@ -16,8 +16,8 @@ export default function PostPreview({ locale, postInitial }: PostPreviewProps) {
     preparePostQuery(locale),
     { locale },
     {
-      initial: postInitial,
-    },
+      initial: postInitial
+    }
   );
 
   return data ? (

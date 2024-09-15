@@ -2,14 +2,14 @@ import Image from 'next/image';
 import urlBuilder from '@sanity/image-url';
 import {
   getImageDimensions,
-  type SanityImageSource,
+  type SanityImageSource
 } from '@sanity/asset-utils';
 import { client } from 'sanity-conf/lib/client';
 import {
   IMAGE_ALIGNMENTS,
   IMAGE_SIZES,
   classAlignments,
-  classSizes,
+  classSizes
 } from '@lib/website.config';
 
 type SanityImageProps = {

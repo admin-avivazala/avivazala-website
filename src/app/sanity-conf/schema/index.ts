@@ -37,5 +37,5 @@ export const schemaTypes = [
   eventType,
   navigation,
   languages,
-  customSettings,
+  customSettings
 ];

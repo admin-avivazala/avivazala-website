@@ -12,21 +12,21 @@ export default defineType({
       type: 'reference',
       to: [{ type: 'page' }, { type: 'post' }],
       options: {
-        disableNew: true,
+        disableNew: true
       }
     }),
     defineField({
       title: 'External URL',
       name: 'externalUrl',
-      description: "Use fully qualified URLS for external link",
-      type: 'url',
+      description: 'Use fully qualified URLS for external link',
+      type: 'url'
     }),
     defineField({
-      name: "submenu",
-      title: "Sub menu",
-      description: "Define the child menu items of this menu item",
+      name: 'submenu',
+      title: 'Sub menu',
+      description: 'Define the child menu items of this menu item',
       type: 'array',
-      of: [{ type: "navigationItem" }]
+      of: [{ type: 'navigationItem' }]
     })
   ]
 });

@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { GrNavigate } from "react-icons/gr";
+import { GrNavigate } from 'react-icons/gr';
 
 export default defineType({
   title: 'Navigation',
@@ -8,15 +8,15 @@ export default defineType({
   icon: GrNavigate,
   fields: [
     defineField({
-      title: "Title",
-      name: "title",
-      type: "string",
+      title: 'Title',
+      name: 'title',
+      type: 'string',
       validation: (rule) => {
         return rule.required();
       }
     }),
     defineField({
-      title: "Navigation Id",
+      title: 'Navigation Id',
       name: 'navId',
       type: 'slug',
       options: {
@@ -24,10 +24,10 @@ export default defineType({
       }
     }),
     defineField({
-      title: "Navigation items",
-      name: "items",
-      type: "array",
-      of: [{ type: "navigationItem" }],
+      title: 'Navigation items',
+      name: 'items',
+      type: 'array',
+      of: [{ type: 'navigationItem' }],
       validation: (rule) => {
         return rule.required();
       }

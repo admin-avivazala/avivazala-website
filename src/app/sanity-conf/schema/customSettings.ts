@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { GrSettingsOption } from "react-icons/gr";
+import { GrSettingsOption } from 'react-icons/gr';
 
 export default defineType({
   title: 'Custom Settings',
@@ -23,11 +23,11 @@ export default defineType({
       validation: (rule) => {
         return rule.required();
       }
-    }),
+    })
   ],
   preview: {
     select: {
-      title: 'key',
+      title: 'key'
     }
   }
 });

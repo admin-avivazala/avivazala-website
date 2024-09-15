@@ -1,7 +1,7 @@
 /**
-* This configuration file lets you run `$ sanity [command]` in this folder
-* Go to https://www.sanity.io/docs/cli to learn more.
-**/
+ * This configuration file lets you run `$ sanity [command]` in this folder
+ * Go to https://www.sanity.io/docs/cli to learn more.
+ **/
 import { dataset, projectId } from '@sanityConf/env';
 import { defineCliConfig } from 'sanity/cli';
 
@@ -14,7 +14,7 @@ export default defineCliConfig({
     resolve: {
       alias: {
         '@sanityConf': `${__dirname}/src/app/sanity-conf/`,
-        '@lib': `${__dirname}/src/app/lib/`,
+        '@lib': `${__dirname}/src/app/lib/`
       }
     }
   }

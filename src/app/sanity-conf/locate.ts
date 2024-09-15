@@ -1,16 +1,16 @@
-import { DocumentLocationResolver } from "sanity/presentation";
-import { map } from "rxjs";
+import { DocumentLocationResolver } from 'sanity/presentation';
+import { map } from 'rxjs';
 
 // Pass 'context' as the second argument
 export const locate: DocumentLocationResolver = (params, context) => {
   // Set up locations for post documents
-  if (params.type === "post") {
+  if (params.type === 'post') {
     // Subscribe to the latest slug and title
     const doc$ = context.documentStore.listenQuery(
       // `*[_type == "post"]`,
       `*[_id == $id][0]{slug,title}`,
       params,
-      { perspective: "previewDrafts" } // returns a draft article if it exists
+      { perspective: 'previewDrafts' } // returns a draft article if it exists
     );
 
     // Return a streaming list of locations
@@ -23,14 +23,14 @@ export const locate: DocumentLocationResolver = (params, context) => {
         return {
           locations: [
             {
-              title: doc.title.hu || "Untitled",
-              href: `/hu/blog/${doc.slug.hu.scurrent}`,
+              title: doc.title.hu || 'Untitled',
+              href: `/hu/blog/${doc.slug.hu.scurrent}`
             },
             {
-              title: "Posts",
-              href: "/hu/blog",
-            },
-          ],
+              title: 'Posts',
+              href: '/hu/blog'
+            }
+          ]
         };
       })
     );

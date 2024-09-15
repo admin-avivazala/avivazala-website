@@ -1,5 +1,5 @@
-import { defineField, defineType } from 'sanity'
-import { GrYoga } from "react-icons/gr";
+import { defineField, defineType } from 'sanity';
+import { GrYoga } from 'react-icons/gr';
 import { defaultLocale } from '@lib/i18n';
 
 export default defineType({
@@ -12,30 +12,30 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'localeString',
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'localeSlug',
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: 'eventType',
       title: 'Event Type',
       type: 'reference',
       to: { type: 'eventType' },
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'localeText',
+      type: 'localeText'
     }),
     defineField({
       name: 'location',
       title: 'Location',
-      type: 'text',
+      type: 'text'
     }),
     defineField({
       name: 'maxSubscribers',
@@ -46,34 +46,34 @@ export default defineType({
     defineField({
       name: 'basicPrice',
       title: 'Basic Price',
-      type: 'number',
+      type: 'number'
     }),
     defineField({
       name: 'startDate',
       title: 'Start Date',
-      type: 'datetime',
+      type: 'datetime'
     }),
     defineField({
       name: 'endDate',
       title: 'End Date',
-      type: 'datetime',
+      type: 'datetime'
     }),
     defineField({
       name: 'publicationStartDate',
       title: 'Publication Start Date',
-      type: 'datetime',
+      type: 'datetime'
     }),
     defineField({
       name: 'publicationEndDate',
       title: 'Publication End Date',
-      type: 'datetime',
+      type: 'datetime'
     }),
     defineField({
       name: 'active',
       title: 'Active',
       type: 'boolean',
       description: 'If this will be visible in your websiste',
-      initialValue: true,
+      initialValue: true
     }),
     defineField({
       title: 'Attendants',
@@ -84,7 +84,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: `title.${defaultLocale}`,
+      title: `title.${defaultLocale}`
     }
   }
-})
+});

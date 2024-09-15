@@ -1,6 +1,6 @@
 import { defineField, defineType } from 'sanity';
-import { defaultLocale } from '@lib/i18n';;
-import { GrDocument } from "react-icons/gr";
+import { defaultLocale } from '@lib/i18n';
+import { GrDocument } from 'react-icons/gr';
 
 export default defineType({
   title: 'Page',
@@ -12,21 +12,21 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'localeString',
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'localeSlug',
-      validation: (rule) => rule.required(),
+      validation: (rule) => rule.required()
     }),
     defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
       options: {
-        hotspot: true,
-      },
+        hotspot: true
+      }
     }),
     defineField({
       name: 'body',
@@ -39,15 +39,25 @@ export default defineType({
       name: 'listOf',
       description: `Choose on of the following document type`,
       type: 'array',
-      of: [{ type: 'string', options: { list: [{ title: 'Post list', value: 'post' }, { title: 'Post categories', value: 'postCategory' }] } }],
-      validation: rule => rule.max(1)
+      of: [
+        {
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Post list', value: 'post' },
+              { title: 'Post categories', value: 'postCategory' }
+            ]
+          }
+        }
+      ],
+      validation: (rule) => rule.max(1)
     })
   ],
 
   preview: {
     select: {
       title: `title.${defaultLocale}`,
-      media: 'mainImage',
+      media: 'mainImage'
     }
-  },
+  }
 });

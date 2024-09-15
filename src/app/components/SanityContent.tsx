@@ -1,20 +1,20 @@
 import {
   PortableText,
   type PortableTextComponents,
-  type PortableTextBlock,
+  type PortableTextBlock
 } from 'next-sanity';
 import SanityImage from './SanityImage';
 
 export default function SanityContent({
   className,
-  value,
+  value
 }: {
   className?: string;
   value: PortableTextBlock[];
 }) {
   const components: PortableTextComponents = {
     block: {
-      h4: ({ children }) => <h4 className="mb-2 font-semibold">{children}</h4>,
+      h4: ({ children }) => <h4 className="mb-2 font-semibold">{children}</h4>
     },
     marks: {
       link: ({ children, value }) => {
@@ -23,11 +23,11 @@ export default function SanityContent({
             {children}
           </a>
         );
-      },
+      }
     },
     types: {
-      image: (props) => <SanityImage {...props} />,
-    },
+      image: (props) => <SanityImage {...props} />
+    }
   };
 
   return (

@@ -4,7 +4,7 @@ import { Post } from 'types/sanity.types';
 
 export default function Posts({
   posts,
-  locale,
+  locale
 }: {
   posts: Post[];
   locale: Locale;

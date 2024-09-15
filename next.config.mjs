@@ -6,10 +6,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.sanity.io',
-      },
-    ],
-  },
+        hostname: 'cdn.sanity.io'
+      }
+    ]
+  }
 };
 
 const withNextIntl = nextIntl('./src/app/lib/i18n.ts');

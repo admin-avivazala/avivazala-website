@@ -1,5 +1,5 @@
 import { defineField, defineType } from 'sanity';
-import { GrContact } from "react-icons/gr";
+import { GrContact } from 'react-icons/gr';
 
 export default defineType({
   title: 'Contact Form',
@@ -10,23 +10,23 @@ export default defineType({
     defineField({
       name: 'fromName',
       title: 'Sender',
-      type: 'string',
+      type: 'string'
     }),
     defineField({
       name: 'fromEmail',
       title: 'Email',
       type: 'string',
-      validation: (rule) => rule.email(),
+      validation: (rule) => rule.email()
     }),
     defineField({
       name: 'message',
       title: 'Message',
-      type: 'text',
-    }),
+      type: 'text'
+    })
   ],
   preview: {
     select: {
-      title: 'fromName',
+      title: 'fromName'
     }
   }
 });

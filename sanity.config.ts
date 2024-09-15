@@ -2,7 +2,12 @@ import { visionTool } from '@sanity/vision';
 import { defineConfig } from 'sanity';
 import { structureTool } from 'sanity/structure';
 
-import { apiVersion, dataset, projectId, sanityStudioTitle } from './src/app/sanity-conf/env';
+import {
+  apiVersion,
+  dataset,
+  projectId,
+  sanityStudioTitle
+} from './src/app/sanity-conf/env';
 import { schemaTypes } from './src/app/sanity-conf/schema';
 import { structure } from './src/app/sanity-conf/structure';
 import { presentationTool } from 'sanity/presentation';
@@ -23,9 +28,9 @@ export default defineConfig({
       },
       previewUrl: {
         draftMode: {
-          enable: '/api/draft',
-        },
-      },
+          enable: '/api/draft'
+        }
+      }
     })
-  ],
+  ]
 });

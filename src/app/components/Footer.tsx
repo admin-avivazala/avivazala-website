@@ -12,7 +12,7 @@ export default async function Footer({ locale }: { locale: Locale }) {
 
   const menuBuilder = new SanityMenuBuilder({
     locale,
-    loadMenu: loadFooterMenu,
+    loadMenu: loadFooterMenu
   });
 
   const menu = await menuBuilder.getMenuData();

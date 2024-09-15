@@ -1,17 +1,17 @@
-import "server-only";
-import { cookies } from "next/headers";
-import { kv } from "@vercel/kv";
+import 'server-only';
+import { cookies } from 'next/headers';
+import { kv } from '@vercel/kv';
 
 type SessionId = string;
 
 export function getSessionId(): SessionId | undefined {
   const cookieStore = cookies();
-  return cookieStore.get("session-id")?.value;
+  return cookieStore.get('session-id')?.value;
 }
 
 function setSessionId(sessionId: SessionId): void {
   const cookieStore = cookies();
-  cookieStore.set("session-id", sessionId);
+  cookieStore.set('session-id', sessionId);
 }
 
 export function getSessionIdAndCreateIfMissing() {
@@ -26,7 +26,7 @@ export function getSessionIdAndCreateIfMissing() {
   return sessionId;
 }
 
-export function getStoreItem(key: string, namespace: string = "") {
+export function getStoreItem(key: string, namespace: string = '') {
   const sessionId = getSessionId();
   if (!sessionId) {
     return null;
@@ -34,7 +34,7 @@ export function getStoreItem(key: string, namespace: string = "") {
   return kv.hget(`session-${namespace}-${sessionId}`, key);
 }
 
-export function getAllStoreItems(namespace: string = "") {
+export function getAllStoreItems(namespace: string = '') {
   const sessionId = getSessionId();
   if (!sessionId) {
     return null;
@@ -42,7 +42,11 @@ export function getAllStoreItems(namespace: string = "") {
   return kv.hgetall(`session-${namespace}-${sessionId}`);
 }
 
-export function setStoreItem(key: string, value: string, namespace: string = "") {
+export function setStoreItem(
+  key: string,
+  value: string,
+  namespace: string = ''
+) {
   const sessionId = getSessionIdAndCreateIfMissing();
   return kv.hset(`session-${namespace}-${sessionId}`, { [key]: value });
-};
+}
